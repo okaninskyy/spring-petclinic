@@ -31,8 +31,9 @@ phases:
       - mvn package
       - java -jar target/*.jar
 
-  artifacts:    
-    files:
-      - target/*.jar
-    discard-paths: yes
-    name: my-artifacts
+artifacts:
+  files:
+    - target/*.jar
+  discard-paths: yes
+  base-directory: target
+  name: my-artifacts
