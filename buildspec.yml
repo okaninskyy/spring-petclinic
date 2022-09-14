@@ -35,5 +35,5 @@ artifacts:
   files:
     - target/*.jar
   discard-paths: yes
-  base-directory: target
+  #base-directory: target
   name: my-artifacts
