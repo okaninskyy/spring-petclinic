@@ -1,5 +1,9 @@
 version: 0.2
-# wolfgang unger 4.2018 - code project with java image - install docker 
+
+env:
+  variables:
+    APP_NAME: spring-petclinic-
+
 phases:
   install:
     commands:
@@ -30,8 +34,15 @@ phases:
       - if [ -e spring-petclinic ]; then cd spring-petclinic; fi
       - mvn package
       #- java -jar target/*.jar
+      - echo $Env:CODEBUILD_BUILD_IMAGE
+      - echo $Env:CODEBUILD_BUILD_ID
+      - echo $Env:CODEBUILD_BUILD_NUMBER
+      -
+      - echo $Env:CODEBUILD_PUBLIC_BUILD_URL
+      - echo $Env:CODEBUILD_RESOLVED_SOURCE_VERSION
 
 artifacts:
   files:
     - target/*.jar
   discard-paths: yes
+  name: $Env:APP_NAME-
