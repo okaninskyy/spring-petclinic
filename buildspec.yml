@@ -34,15 +34,9 @@ phases:
       - if [ -e spring-petclinic ]; then cd spring-petclinic; fi
       - mvn package
       #- java -jar target/*.jar
-      - echo $CODEBUILD_BUILD_IMAGE
-      - echo $CODEBUILD_BUILD_ID
-      - echo $CODEBUILD_BUILD_NUMBER
-      -
-      - echo $CODEBUILD_PUBLIC_BUILD_URL
-      - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
 
 artifacts:
   files:
     - target/*.jar
   discard-paths: yes
-  name: $APP_NAME-
+  name: $APP_NAME-$CODEBUILD_BUILD_NUMBER.jar
