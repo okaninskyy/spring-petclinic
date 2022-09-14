@@ -29,7 +29,7 @@ phases:
       - echo Maven Build ...
       - if [ -e spring-petclinic ]; then cd spring-petclinic; fi
       - mvn package
-      - java -jar target/*.jar
+      #- java -jar target/*.jar
 
 artifacts:
   files:
