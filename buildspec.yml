@@ -33,5 +33,7 @@ phases:
       - java -jar target/*.jar
       
   artifacts:
-      - files:  target/spring-petclinic-*.jar
+      files:  
+        - target/spring-petclinic-*.jar
+      name: spring-petclinic.art
       #- files:  target/spring-petclinic-2.7.3.jar
