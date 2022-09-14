@@ -36,7 +36,9 @@ phases:
       #- java -jar target/*.jar
 
 artifacts:
+  type: zip
   files:
     - target/*.jar
   discard-paths: yes
-  name: $APP_NAME-$CODEBUILD_BUILD_NUMBER.jar
+  Path: arch
+  name: $APP_NAME-$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7).jar
